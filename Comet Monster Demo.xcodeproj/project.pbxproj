@@ -20,6 +20,7 @@
 		5748FFA1292B650B00923318 /* CareMotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FFA0292B650B00923318 /* CareMotionViewController.swift */; };
 		5774221D292B6E35003696EF /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774221C292B6E35003696EF /* CreationViewController.swift */; };
 		57D62687292B9980005E1D24 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D62686292B9980005E1D24 /* WelcomeViewController.swift */; };
+		57D6268A292BABA1005E1D24 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57D62689292BABA1005E1D24 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D6268A292BABA1005E1D24 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +130,9 @@
 			dependencies = (
 			);
 			name = "Comet Monster Demo";
+			packageProductDependencies = (
+				57D62689292BABA1005E1D24 /* IQKeyboardManagerSwift */,
+			);
 			productName = "Comet Monster Demo";
 			productReference = 5748FF7D292B4F9800923318 /* Comet Monster Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +161,9 @@
 				Base,
 			);
 			mainGroup = 5748FF74292B4F9800923318;
+			packageReferences = (
+				57D62688292BABA1005E1D24 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 5748FF7E292B4F9800923318 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -410,6 +418,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		57D62688292BABA1005E1D24 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		57D62689292BABA1005E1D24 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57D62688292BABA1005E1D24 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5748FF89292B4F9800923318 /* Comet_Monster_Demo.xcdatamodeld */ = {

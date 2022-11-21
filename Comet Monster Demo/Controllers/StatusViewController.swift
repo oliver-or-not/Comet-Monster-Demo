@@ -9,10 +9,6 @@ import UIKit
 
 class StatusViewController: UIViewController {
 	
-	var myMonster = Monster()
-	
-	let monsterFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("MonsterFile.plist")
-	
 	var healthList = ["💙💙💙💙💙", "❤️💙💙💙💙", "❤️❤️💙💙💙", "❤️❤️❤️💙💙", "❤️❤️❤️❤️💙", "❤️❤️❤️❤️❤️"]
 	var emotionList = ["😡😡😡😡😡", "🙂😡😡😡😡", "🙂🙂😡😡😡", "🙂🙂🙂😡😡", "🙂🙂🙂🙂😡", "🙂🙂🙂🙂🙂"]
 	var cleannessList = ["🧹🧹🧹🧹🧹", "✨🧹🧹🧹🧹", "✨✨🧹🧹🧹", "✨✨✨🧹🧹", "✨✨✨✨🧹", "✨✨✨✨✨"]
@@ -32,21 +28,11 @@ class StatusViewController: UIViewController {
 		
 		loadData()
 		
-		nameGraph.text = myMonster.nickname + (myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
-		speciesGraph.text = Monster.speciesList[myMonster.speciesNum]
-		healthGraph.text = healthList[myMonster.health]
-		emotionGraph.text = emotionList[myMonster.emotion]
-		cleannessGraph.text = cleannessList[myMonster.cleanness]
-	}
-
-	func loadData() {
-		do {
-			let data = try Data(contentsOf: monsterFilePath!)
-			let decoder = PropertyListDecoder()
-			myMonster = try decoder.decode(Monster.self, from: data)
-		} catch {
-			print("Error while decoding, \(error)")
-		}
+		nameGraph.text = StatusViewController.myMonster.nickname + (StatusViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
+		speciesGraph.text = Monster.speciesList[StatusViewController.myMonster.speciesNum]
+		healthGraph.text = healthList[StatusViewController.myMonster.health]
+		emotionGraph.text = emotionList[StatusViewController.myMonster.emotion]
+		cleannessGraph.text = cleannessList[StatusViewController.myMonster.cleanness]
 	}
 
 }

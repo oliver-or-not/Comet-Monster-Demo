@@ -9,10 +9,6 @@ import UIKit
 
 class MainViewController: UIViewController {
 	
-	var myMonster = Monster()
-	
-	let monsterFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("MonsterFile.plist")
-	
 	@IBOutlet weak var statusButton: UIButton!
 	
 	@IBOutlet weak var careButton: UIButton!
@@ -35,28 +31,6 @@ class MainViewController: UIViewController {
 		performSegue(withIdentifier: "mainToCare", sender: self)
 		
 	}
-	
-	func loadData() {
-		do {
-			let data = try Data(contentsOf: monsterFilePath!)
-			let decoder = PropertyListDecoder()
-			myMonster = try decoder.decode(Monster.self, from: data)
-		} catch {
-			print("Error while decoding, \(error)")
-		}
-	}
-	
-	
-	
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		if segue.identifier == "mainToStatus" {
-//			let destinationVC = segue.destination as! StatusViewController
-//			destinationVC.myMonster = myMonster
-//		} else if segue.identifier == "mainToCare" {
-//			let destinationVC = segue.destination as! CareViewController
-//			destinationVC.myMonster = myMonster
-//		}
-//	}
 	
 }
 

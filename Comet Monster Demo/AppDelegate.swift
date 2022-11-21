@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
+		
+		IQKeyboardManager.shared.enable = true
+		IQKeyboardManager.shared.enableAutoToolbar = false
+		
 		return true
 	}
 
@@ -79,3 +84,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIViewController: UITextFieldDelegate {
+	open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		view.endEditing(true)
+	}
+	
+	public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+		return true
+	}
+	
+}
+
+extension UIViewController {
+	static var myMonster = Monster()
+	
+	static let monsterFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("MonsterFile.plist")
+	
+	func loadData() {
+		do {
+			let data = try Data(contentsOf: UIViewController.monsterFilePath!)
+			let decoder = PropertyListDecoder()
+			UIViewController.myMonster = try decoder.decode(Monster.self, from: data)
+		} catch {
+			print("Error while decoding, \(error)")
+		}
+	}
+	
+	func saveData() {
+			let encoder = PropertyListEncoder()
+
+			do {
+				let data = try encoder.encode(UIViewController.myMonster)
+				try data.write(to: UIViewController.monsterFilePath!)
+			} catch {
+					print("Error while encoding, \(error)")
+			}
+	}
+	
+	
+}

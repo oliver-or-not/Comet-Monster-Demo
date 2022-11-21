@@ -8,12 +8,7 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-	
-	var myMonster = Monster()
-	
-	let monsterFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("MonsterFile.plist")
-	
-	
+
 	@IBOutlet weak var newStartButton: UIButton!
 	
 	@IBOutlet weak var continueButton: UIButton!
@@ -27,7 +22,7 @@ class WelcomeViewController: UIViewController {
 	}
 	
 	@IBAction func newStartPressed(_ sender: UIButton) {
-		if myMonster.nickname == "" {
+		if WelcomeViewController.myMonster.nickname == "" {
 			performSegue(withIdentifier: "welcomeToCreation", sender: self)
 		} else {
 			let alert = UIAlertController(title: "Alert", message: "Will you erase your old data?", preferredStyle: .alert)
@@ -62,7 +57,7 @@ class WelcomeViewController: UIViewController {
 	}
 	
 	@IBAction func continuePressed(_ sender: UIButton) {
-		if myMonster.nickname == "" {
+		if WelcomeViewController.myMonster.nickname == "" {
 			let alert = UIAlertController(title: "No Previous Data", message: "Press 'New Start' button instead.", preferredStyle: .alert)
 			
 			let action = UIAlertAction(title: "OK", style: .default)
@@ -76,15 +71,7 @@ class WelcomeViewController: UIViewController {
 		}
 	}
 	
-	func loadData() {
-		do {
-			let data = try Data(contentsOf: monsterFilePath!)
-			let decoder = PropertyListDecoder()
-			myMonster = try decoder.decode(Monster.self, from: data)
-		} catch {
-			print("Error while decoding, \(error)")
-		}
-	}
+
 	
 	
 }

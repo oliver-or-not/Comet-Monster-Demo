@@ -9,11 +9,11 @@ import UIKit
 
 class CreationViewController: UIViewController {
 	
-	var myMonster = Monster()
-	
-	let monsterFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("MonsterFile.plist")
-	
-	@IBOutlet weak var nameInputField: UITextField!
+	@IBOutlet weak var nameInputField: UITextField! {
+		didSet {
+			nameInputField.delegate = self
+		}
+	}
 	
 	@IBOutlet weak var createButton: UIButton!
 	
@@ -46,9 +46,9 @@ class CreationViewController: UIViewController {
 				return
 			}
 			
-			myMonster.nickname = safeText
+			CreationViewController.myMonster.nickname = safeText
 			
-			myMonster.speciesNum = 1
+			CreationViewController.myMonster.speciesNum = 1
 			
 			saveData()
 		}
@@ -56,25 +56,5 @@ class CreationViewController: UIViewController {
 		performSegue(withIdentifier: "creationToMain", sender: self)
 		
 	}
-	
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		if segue.identifier == "creationToMain" {
-//			let destinationVC = segue.destination as! MainViewController
-//			destinationVC.myMonster = myMonster
-//		}
-//	}
-	
-	func saveData() {
-			let encoder = PropertyListEncoder()
 
-			do {
-					let data = try encoder.encode(self.myMonster)
-					try data.write(to: monsterFilePath!)
-			} catch {
-					print("Error while encoding, \(error)")
-			}
-	}
-
-	
-	
 }
