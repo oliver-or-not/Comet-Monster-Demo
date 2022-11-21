@@ -9,23 +9,35 @@
 /* Begin PBXBuildFile section */
 		5748FF81292B4F9800923318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF80292B4F9800923318 /* AppDelegate.swift */; };
 		5748FF83292B4F9800923318 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF82292B4F9800923318 /* SceneDelegate.swift */; };
-		5748FF85292B4F9800923318 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF84292B4F9800923318 /* ViewController.swift */; };
+		5748FF85292B4F9800923318 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF84292B4F9800923318 /* MainViewController.swift */; };
 		5748FF88292B4F9800923318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5748FF86292B4F9800923318 /* Main.storyboard */; };
 		5748FF8B292B4F9800923318 /* Comet_Monster_Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF89292B4F9800923318 /* Comet_Monster_Demo.xcdatamodeld */; };
 		5748FF8D292B4F9900923318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5748FF8C292B4F9900923318 /* Assets.xcassets */; };
 		5748FF90292B4F9900923318 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5748FF8E292B4F9900923318 /* LaunchScreen.storyboard */; };
+		5748FF9B292B61D700923318 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF9A292B61D700923318 /* Monster.swift */; };
+		5748FF9D292B64E600923318 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF9C292B64E600923318 /* StatusViewController.swift */; };
+		5748FF9F292B64F200923318 /* CareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF9E292B64F200923318 /* CareViewController.swift */; };
+		5748FFA1292B650B00923318 /* CareMotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FFA0292B650B00923318 /* CareMotionViewController.swift */; };
+		5774221D292B6E35003696EF /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774221C292B6E35003696EF /* CreationViewController.swift */; };
+		57D62687292B9980005E1D24 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D62686292B9980005E1D24 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5748FF7D292B4F9800923318 /* Comet Monster Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comet Monster Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5748FF80292B4F9800923318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5748FF82292B4F9800923318 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5748FF84292B4F9800923318 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5748FF84292B4F9800923318 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5748FF87292B4F9800923318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5748FF8A292B4F9800923318 /* Comet_Monster_Demo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Comet_Monster_Demo.xcdatamodel; sourceTree = "<group>"; };
 		5748FF8C292B4F9900923318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5748FF8F292B4F9900923318 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5748FF91292B4F9900923318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5748FF9A292B61D700923318 /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		5748FF9C292B64E600923318 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		5748FF9E292B64F200923318 /* CareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareViewController.swift; sourceTree = "<group>"; };
+		5748FFA0292B650B00923318 /* CareMotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareMotionViewController.swift; sourceTree = "<group>"; };
+		5774221C292B6E35003696EF /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		57D62686292B9980005E1D24 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +72,44 @@
 			children = (
 				5748FF80292B4F9800923318 /* AppDelegate.swift */,
 				5748FF82292B4F9800923318 /* SceneDelegate.swift */,
-				5748FF84292B4F9800923318 /* ViewController.swift */,
-				5748FF86292B4F9800923318 /* Main.storyboard */,
+				5748FF99292B509D00923318 /* Models */,
+				5748FF98292B509600923318 /* Views */,
+				5748FF97292B508800923318 /* Controllers */,
 				5748FF8C292B4F9900923318 /* Assets.xcassets */,
-				5748FF8E292B4F9900923318 /* LaunchScreen.storyboard */,
 				5748FF91292B4F9900923318 /* Info.plist */,
 				5748FF89292B4F9800923318 /* Comet_Monster_Demo.xcdatamodeld */,
 			);
 			path = "Comet Monster Demo";
+			sourceTree = "<group>";
+		};
+		5748FF97292B508800923318 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57D62686292B9980005E1D24 /* WelcomeViewController.swift */,
+				5774221C292B6E35003696EF /* CreationViewController.swift */,
+				5748FF84292B4F9800923318 /* MainViewController.swift */,
+				5748FF9C292B64E600923318 /* StatusViewController.swift */,
+				5748FF9E292B64F200923318 /* CareViewController.swift */,
+				5748FFA0292B650B00923318 /* CareMotionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5748FF98292B509600923318 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5748FF8E292B4F9900923318 /* LaunchScreen.storyboard */,
+				5748FF86292B4F9800923318 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5748FF99292B509D00923318 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5748FF9A292B61D700923318 /* Monster.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5748FF85292B4F9800923318 /* ViewController.swift in Sources */,
+				5748FF85292B4F9800923318 /* MainViewController.swift in Sources */,
+				57D62687292B9980005E1D24 /* WelcomeViewController.swift in Sources */,
+				5748FFA1292B650B00923318 /* CareMotionViewController.swift in Sources */,
+				5774221D292B6E35003696EF /* CreationViewController.swift in Sources */,
 				5748FF81292B4F9800923318 /* AppDelegate.swift in Sources */,
+				5748FF9F292B64F200923318 /* CareViewController.swift in Sources */,
 				5748FF8B292B4F9800923318 /* Comet_Monster_Demo.xcdatamodeld in Sources */,
 				5748FF83292B4F9800923318 /* SceneDelegate.swift in Sources */,
+				5748FF9D292B64E600923318 /* StatusViewController.swift in Sources */,
+				5748FF9B292B61D700923318 /* Monster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
