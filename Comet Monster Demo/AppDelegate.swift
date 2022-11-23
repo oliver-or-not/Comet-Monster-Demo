@@ -84,6 +84,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+//MARK: - Pulling Down Keyboard
 extension UIViewController: UITextFieldDelegate {
 	open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		view.endEditing(true)
@@ -96,6 +98,7 @@ extension UIViewController: UITextFieldDelegate {
 	
 }
 
+//MARK: - Saving Monster Data
 extension UIViewController {
 	static var myMonster = Monster()
 	

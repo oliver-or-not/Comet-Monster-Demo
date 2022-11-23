@@ -18,6 +18,9 @@ class WelcomeViewController: UIViewController {
 		newStartButton.layer.cornerRadius = 5
 		continueButton.layer.cornerRadius = 5
 		loadData()
+		if WelcomeViewController.myMonster.nickname == "" {
+			continueButton.backgroundColor = .darkGray
+		}
 //		myMonster.nickname = "aaa"
 	}
 	
@@ -29,7 +32,7 @@ class WelcomeViewController: UIViewController {
 			
 			let action1 = UIAlertAction(title: "Yes", style: .default) { action in
 				
-				let alert = UIAlertController(title: "Alert", message: "Delete process will be actuated. Are you sure to do this?", preferredStyle: .alert)
+				let alert = UIAlertController(title: "Alert", message: "Delete process will be actuated.", preferredStyle: .alert)
 				
 				let action1 = UIAlertAction(title: "Yes", style: .default) { action in
 					
@@ -38,8 +41,8 @@ class WelcomeViewController: UIViewController {
 				
 				let action2 = UIAlertAction(title: "No", style: .default)
 				
-				alert.addAction(action2)
 				alert.addAction(action1)
+				alert.addAction(action2)
 				
 				self.present(alert, animated: true, completion: nil)
 				
@@ -47,8 +50,8 @@ class WelcomeViewController: UIViewController {
 			
 			let action2 = UIAlertAction(title: "No", style: .default)
 			
-			alert.addAction(action2)
 			alert.addAction(action1)
+			alert.addAction(action2)
 			
 			present(alert, animated: true, completion: nil)
 			

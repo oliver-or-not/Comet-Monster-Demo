@@ -13,6 +13,8 @@ class StatusViewController: UIViewController {
 	var emotionList = ["😡😡😡😡😡", "🙂😡😡😡😡", "🙂🙂😡😡😡", "🙂🙂🙂😡😡", "🙂🙂🙂🙂😡", "🙂🙂🙂🙂🙂"]
 	var cleannessList = ["🧹🧹🧹🧹🧹", "✨🧹🧹🧹🧹", "✨✨🧹🧹🧹", "✨✨✨🧹🧹", "✨✨✨✨🧹", "✨✨✨✨✨"]
 
+	@IBOutlet weak var downButton: UIButton!
+	
 	@IBOutlet weak var nameGraph: UILabel!
 	
 	@IBOutlet weak var speciesGraph: UILabel!
@@ -26,14 +28,26 @@ class StatusViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		loadData()
+		self.navigationItem.hidesBackButton = false
 		
-		nameGraph.text = StatusViewController.myMonster.nickname + (StatusViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
-		speciesGraph.text = Monster.speciesList[StatusViewController.myMonster.speciesNum]
+		downButton.layer.cornerRadius = 20
+		
+		loadData()
+
+		nameGraph.text = StatusViewController.myMonster.nickname
+		speciesGraph.text = Monster.speciesList[StatusViewController.myMonster.speciesNum]  + (StatusViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
 		healthGraph.text = healthList[StatusViewController.myMonster.health]
 		emotionGraph.text = emotionList[StatusViewController.myMonster.emotion]
 		cleannessGraph.text = cleannessList[StatusViewController.myMonster.cleanness]
 	}
 
+	@IBAction func downPressed(_ sender: UIButton) {
+		
+		dismiss(animated: true)
+		
+	}
+	
+	
+	
 }
 

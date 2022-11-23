@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		self.navigationItem.hidesBackButton = true
 		statusButton.layer.cornerRadius = 5
 		careButton.layer.cornerRadius = 5
 		loadData()
