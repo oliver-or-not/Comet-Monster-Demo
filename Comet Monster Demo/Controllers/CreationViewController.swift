@@ -47,6 +47,8 @@ class CreationViewController: UIViewController {
 				return
 			}
 			
+			CreationViewController.myMonster = Monster()
+			
 			CreationViewController.myMonster.nickname = safeText
 			
 			CreationViewController.myMonster.speciesNum = 1

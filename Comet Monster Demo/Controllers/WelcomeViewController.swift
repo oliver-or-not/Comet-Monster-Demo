@@ -28,7 +28,7 @@ class WelcomeViewController: UIViewController {
 		if WelcomeViewController.myMonster.nickname == "" {
 			performSegue(withIdentifier: "welcomeToCreation", sender: self)
 		} else {
-			let alert = UIAlertController(title: "Alert", message: "Will you erase your old data?", preferredStyle: .alert)
+			let alert = UIAlertController(title: "Alert", message: "Will you erase your previous data?", preferredStyle: .alert)
 			
 			let action1 = UIAlertAction(title: "Yes", style: .default) { action in
 				
