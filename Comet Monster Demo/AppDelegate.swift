@@ -153,3 +153,10 @@ extension UIColor {
 			 )
 	 }
 }
+
+
+//MARK: - naming -> evolution -> main dismissing
+
+extension UIViewController {
+	static var letsGoToMain = false
+}

@@ -43,6 +43,16 @@ class EvolutionViewController: UIViewController {
 		
 		prevSpeciesNum = EvolutionViewController.myMonster.speciesNum
 		nextSpeciesNum = Monster.evolutionSpeciesNum[EvolutionViewController.myMonster.speciesNum]
+		
+		monsterImage.image = UIViewController.monsterImageArray[prevSpeciesNum][0]
+		
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		if UIViewController.letsGoToMain == true {
+			UIViewController.letsGoToMain = false
+			dismiss(animated: true)
+		}
 	}
 	
 	@objc func evolutionTimerFunc() {
@@ -70,9 +80,9 @@ class EvolutionViewController: UIViewController {
 			
 			self.effectIndex += 1
 		}
-		
-		
+
 	}
+	
 	@IBAction func okPressed(_ sender: UIButton) {
 		if startOrOk == 0 {//start pressed
 			startOrOk = 1

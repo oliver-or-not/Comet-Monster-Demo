@@ -52,7 +52,10 @@ class NamingViewController: UIViewController {
 			saveData()
 		}
 		
-		performSegue(withIdentifier: "namingToMain", sender: self)
+		
+		
+		UIViewController.letsGoToMain = true
+		dismiss(animated: true)
 		
 	}
 
