@@ -8,7 +8,7 @@
 import UIKit
 
 class CareMotionViewController: UIViewController {
-
+	
 	var healthList = ["💙💙💙💙💙", "❤️💙💙💙💙", "❤️❤️💙💙💙", "❤️❤️❤️💙💙", "❤️❤️❤️❤️💙", "❤️❤️❤️❤️❤️"]
 	var emotionList = ["😡😡😡😡😡", "🙂😡😡😡😡", "🙂🙂😡😡😡", "🙂🙂🙂😡😡", "🙂🙂🙂🙂😡", "🙂🙂🙂🙂🙂"]
 	var cleannessList = ["🧹🧹🧹🧹🧹", "✨🧹🧹🧹🧹", "✨✨🧹🧹🧹", "✨✨✨🧹🧹", "✨✨✨✨🧹", "✨✨✨✨✨"]
@@ -19,21 +19,39 @@ class CareMotionViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		
 		if careChoice == "Food" {
-			CareMotionViewController.myMonster.health = min(5, CareMotionViewController.myMonster.health + 2)
+			if CareMotionViewController.myMonster.addedHealth - CareMotionViewController.myMonster.subtractedHealth < -3 {
+				CareMotionViewController.myMonster.addedHealth = CareMotionViewController.myMonster.subtractedHealth - 3
+			}
+			CareMotionViewController.myMonster.addedHealth += 2
+			if CareMotionViewController.myMonster.addedHealth - CareMotionViewController.myMonster.subtractedHealth > 2 {
+				CareMotionViewController.myMonster.addedHealth = CareMotionViewController.myMonster.subtractedHealth + 2
+			}
 			saveData()
 			DispatchQueue.main.async {
 				self.changeGraph.text = self.healthList[CareMotionViewController.myMonster.health]
 			}
 		} else if careChoice == "Play" {
-			CareMotionViewController.myMonster.emotion = min(5, CareMotionViewController.myMonster.emotion + 2)
+			if CareMotionViewController.myMonster.addedEmotion - CareMotionViewController.myMonster.subtractedEmotion < -3 {
+				CareMotionViewController.myMonster.addedEmotion = CareMotionViewController.myMonster.subtractedEmotion - 3
+			}
+			CareMotionViewController.myMonster.addedEmotion += 2
+			if CareMotionViewController.myMonster.addedEmotion - CareMotionViewController.myMonster.subtractedEmotion > 2 {
+				CareMotionViewController.myMonster.addedEmotion = CareMotionViewController.myMonster.subtractedEmotion + 2
+			}
 			saveData()
 			DispatchQueue.main.async {
 				self.changeGraph.text = self.emotionList[CareMotionViewController.myMonster.emotion]
 			}
 		} else if careChoice == "Shower" {
-			CareMotionViewController.myMonster.cleanness = min(5, CareMotionViewController.myMonster.cleanness + 2)
+			if CareMotionViewController.myMonster.addedCleanness - CareMotionViewController.myMonster.subtractedCleanness < -3 {
+				CareMotionViewController.myMonster.addedCleanness = CareMotionViewController.myMonster.subtractedCleanness - 3
+			}
+			CareMotionViewController.myMonster.addedCleanness += 2
+			if CareMotionViewController.myMonster.addedCleanness - CareMotionViewController.myMonster.subtractedCleanness > 2 {
+				CareMotionViewController.myMonster.addedCleanness = CareMotionViewController.myMonster.subtractedCleanness + 2
+			}
 			saveData()
 			DispatchQueue.main.async {
 				self.changeGraph.text = self.cleannessList[CareMotionViewController.myMonster.cleanness]
@@ -44,13 +62,11 @@ class CareMotionViewController: UIViewController {
 		
 		
 		Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
-
+		
 	}
-
+	
 	@objc func timerFunc() {
 		dismiss(animated: true)
 	}
-	
-	
 
 }

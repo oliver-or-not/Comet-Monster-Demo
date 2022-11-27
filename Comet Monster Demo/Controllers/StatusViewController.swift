@@ -37,7 +37,7 @@ class StatusViewController: UIViewController {
 		if Monster.isEgg[StatusViewController.myMonster.speciesNum] {
 			
 			nameGraph.text = "???"
-			speciesGraph.text = "???"
+			speciesGraph.text = "egg"
 			healthGraph.text = "-"
 			emotionGraph.text = "-"
 			cleannessGraph.text = "-"
