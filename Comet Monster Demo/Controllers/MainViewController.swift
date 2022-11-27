@@ -53,6 +53,18 @@ class MainViewController: UIViewController {
 			}
 		}
 		
+		saveData()
+		
+		if UIViewController.myMonster.health == 0 {
+			UIViewController.myMonster = Monster()
+		} else if UIViewController.myMonster.emotion == 0 {
+			UIViewController.myMonster = Monster()
+		} else if UIViewController.myMonster.cleanness == 0 {
+			UIViewController.myMonster = Monster()
+		}
+		
+		saveData()
+		
 		if !UIViewController.myMonster.hatchOpen && !UIViewController.myMonster.evolveOpen {
 			hatchButton.setTitle("", for: .normal)
 			hatchButton.isEnabled = false

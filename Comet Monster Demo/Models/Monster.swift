@@ -34,13 +34,13 @@ struct Monster: Codable {
 	var addedCleanness: Int = 0
 	
 	var subtractedHealth: Int {
-		lifeLength / 14400
+		lifeLength / 20
 	}
 	var subtractedEmotion: Int {
-		lifeLength / 18000
+		lifeLength / 40
 	}
 	var subtractedCleanness: Int {
-		lifeLength / 14400
+		lifeLength / 30
 	}
 	
 	static var speciesList = ["???", "Dinodino", "Dinorigo"]
