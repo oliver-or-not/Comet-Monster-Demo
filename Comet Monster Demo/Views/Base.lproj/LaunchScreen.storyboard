@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +24,7 @@
                                             <constraint firstAttribute="width" constant="160" id="v8A-gp-OvG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="36"/>
-                                        <color key="textColor" systemColor="systemIndigoColor"/>
+                                        <color key="textColor" red="0.63114374799999995" green="0.80120416930000005" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monster" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvz-2O-m9M">
@@ -34,14 +33,14 @@
                                             <constraint firstAttribute="width" constant="160" id="un1-lK-m8Q"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="36"/>
-                                        <color key="textColor" systemColor="systemCyanColor"/>
+                                        <color key="textColor" red="0.70980392160000005" green="1" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.86274509803921573" green="0.84313725490196079" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.38724680996520766" green="0.40045040666250836" blue="0.57473169191919193" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6xV-d1-qIh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2Sa-hu-ruM"/>
                             <constraint firstItem="6xV-d1-qIh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="mxJ-7p-tme"/>
@@ -50,15 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+            <point key="canvasLocation" x="289" y="35"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

@@ -33,6 +33,8 @@ class TutorialViewController: UIViewController {
 		
 		
 		explanationLabel.text = explanationArray[0]
+		explanationLabel.clipsToBounds = true
+		explanationLabel.layer.cornerRadius = 15
 		
 		Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tutorialTimeFunc), userInfo: nil, repeats: false)
 		

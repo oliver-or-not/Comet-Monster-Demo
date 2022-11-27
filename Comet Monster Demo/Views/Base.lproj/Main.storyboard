@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome background" translatesAutoresizingMaskIntoConstraints="NO" id="VDM-Dd-mTw">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="jQZ-iM-FcX">
                                 <rect key="frame" x="96.666666666666686" y="262" width="200" height="328"/>
                                 <subviews>
@@ -28,7 +31,7 @@
                                                     <constraint firstAttribute="width" constant="200" id="Dp6-4a-vAd"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="45"/>
-                                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                                <color key="textColor" red="0.63114374795898065" green="0.80120416933434024" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monster" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6n-fH-MY0">
@@ -37,7 +40,7 @@
                                                     <constraint firstAttribute="width" constant="200" id="nh2-9m-tLn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="45"/>
-                                                <color key="textColor" systemColor="systemCyanColor"/>
+                                                <color key="textColor" red="0.70980392156862748" green="1" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -85,8 +88,12 @@
                         <viewLayoutGuide key="safeArea" id="tua-DT-V6b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="VDM-Dd-mTw" firstAttribute="leading" secondItem="s8H-Mk-x8p" secondAttribute="leading" id="Euh-Vx-D50"/>
                             <constraint firstItem="jQZ-iM-FcX" firstAttribute="centerY" secondItem="s8H-Mk-x8p" secondAttribute="centerY" id="Kdp-eJ-ZY3"/>
+                            <constraint firstItem="VDM-Dd-mTw" firstAttribute="top" secondItem="s8H-Mk-x8p" secondAttribute="top" id="P06-BP-TPp"/>
                             <constraint firstItem="jQZ-iM-FcX" firstAttribute="centerX" secondItem="s8H-Mk-x8p" secondAttribute="centerX" id="e5D-iA-36f"/>
+                            <constraint firstAttribute="bottom" secondItem="VDM-Dd-mTw" secondAttribute="bottom" id="kiS-MT-dfM"/>
+                            <constraint firstAttribute="trailing" secondItem="VDM-Dd-mTw" secondAttribute="trailing" id="yuA-7P-gQ0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="q3I-PW-Z8N"/>
@@ -114,6 +121,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6n0-4r-P2W">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="180"/>
+                                        <color key="backgroundColor" red="0.77205569727891155" green="0.87167835884353739" blue="0.88743622448979587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="RB3-a7-9PD"/>
                                             <constraint firstAttribute="width" constant="250" id="r9l-fU-1eP"/>
@@ -596,7 +604,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HuY-T6-G1Z"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.85098039219999999" green="0.88235294119999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ujk-MP-dFK" firstAttribute="centerY" secondItem="Fg9-Yl-eEZ" secondAttribute="centerY" constant="50" id="Mdj-s9-cFf"/>
                             <constraint firstItem="ujk-MP-dFK" firstAttribute="centerX" secondItem="Fg9-Yl-eEZ" secondAttribute="centerX" id="OI2-Nq-smr"/>
@@ -782,18 +790,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CbP-JW-X6q"/>
-        <segue reference="Xiw-04-4hC"/>
+        <segue reference="DGb-2U-Wnm"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="welcome background" width="400" height="1000"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
