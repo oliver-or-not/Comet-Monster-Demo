@@ -112,19 +112,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="RRt-is-Xv0">
-                                <rect key="frame" x="105.66666666666667" y="376" width="181.66666666666663" height="140"/>
+                                <rect key="frame" x="71.666666666666686" y="308.66666666666669" width="250" height="275.00000000000006"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6n0-4r-P2W">
-                                        <rect key="frame" x="0.0" y="0.0" width="181.66666666666666" height="45"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explanation label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6n0-4r-P2W">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="180"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="a9M-dW-WgL"/>
+                                            <constraint firstAttribute="height" constant="180" id="RB3-a7-9PD"/>
+                                            <constraint firstAttribute="width" constant="250" id="r9l-fU-1eP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNP-Ss-E2Q">
-                                        <rect key="frame" x="45.999999999999986" y="95" width="90.000000000000014" height="45"/>
+                                        <rect key="frame" x="79.999999999999986" y="229.99999999999994" width="90.000000000000014" height="45"/>
                                         <color key="backgroundColor" red="0.56078431370000004" green="0.65098039220000004" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="E9B-ro-YqS"/>
@@ -495,7 +496,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Shower ⠂⠂⠂⠂⠂⠂✨">
+                                                <state key="normal" title="Wash ⠂⠂⠂⠂⠂⠂✨">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -547,7 +548,7 @@
                         <outlet property="downButton" destination="l0U-H3-wTa" id="aJz-5a-yCz"/>
                         <outlet property="foodButton" destination="pcb-9E-qSf" id="C5b-SF-jQp"/>
                         <outlet property="playButton" destination="uiT-El-oA6" id="SPq-zG-e6P"/>
-                        <outlet property="showerButton" destination="hrH-cX-kVx" id="m6B-k8-9Re"/>
+                        <outlet property="washButton" destination="hrH-cX-kVx" id="m6B-k8-9Re"/>
                         <segue destination="hZu-xJ-g4l" kind="presentation" identifier="careToCareMotion" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="0em-zl-z0p"/>
                     </connections>
                 </viewController>
@@ -783,7 +784,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xiw-04-4hC"/>
+        <segue reference="DGb-2U-Wnm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

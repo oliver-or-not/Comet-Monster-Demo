@@ -30,7 +30,9 @@ class TutorialViewController: UIViewController {
 		
 		okButton.setTitle("...", for: .normal)
 		
+
 		explanationLabel.text = explanationArray[0]
+		
 	}
 	
 	@IBAction func okPressed(_ sender: UIButton) {

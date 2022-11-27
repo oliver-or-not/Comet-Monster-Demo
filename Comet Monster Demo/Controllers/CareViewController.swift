@@ -15,7 +15,7 @@ class CareViewController: UIViewController {
 	
 	@IBOutlet weak var playButton: UIButton!
 	
-	@IBOutlet weak var showerButton: UIButton!
+	@IBOutlet weak var washButton: UIButton!
 
 	var careChoice = ""
 	
@@ -27,9 +27,19 @@ class CareViewController: UIViewController {
 		downButton.layer.cornerRadius = 20
 		foodButton.layer.cornerRadius = 5
 		playButton.layer.cornerRadius = 5
-		showerButton.layer.cornerRadius = 5
+		washButton.layer.cornerRadius = 5
 		
 		loadData()
+		
+		if Monster.isEgg[CareViewController.myMonster.speciesNum] {
+			foodButton.isHidden = true
+			playButton.isHidden = true
+			washButton.isHidden = true
+		} else {
+			foodButton.isHidden = false
+			playButton.isHidden = false
+			washButton.isHidden = false
+		}
 	}
 	
 	
@@ -43,7 +53,7 @@ class CareViewController: UIViewController {
 		performSegue(withIdentifier: "careToCareMotion", sender: self)
 	}
 	
-	@IBAction func showerPressed(_ sender: UIButton) {
+	@IBAction func washPressed(_ sender: UIButton) {
 		careChoice = "Shower"
 		performSegue(withIdentifier: "careToCareMotion", sender: self)
 	}
