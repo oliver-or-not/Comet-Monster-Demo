@@ -34,11 +34,23 @@ class StatusViewController: UIViewController {
 		
 		loadData()
 
-		nameGraph.text = StatusViewController.myMonster.nickname
-		speciesGraph.text = Monster.speciesList[StatusViewController.myMonster.speciesNum]  + (StatusViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
-		healthGraph.text = healthList[StatusViewController.myMonster.health]
-		emotionGraph.text = emotionList[StatusViewController.myMonster.emotion]
-		cleannessGraph.text = cleannessList[StatusViewController.myMonster.cleanness]
+		if Monster.isEgg[StatusViewController.myMonster.speciesNum] {
+			
+			nameGraph.text = "???"
+			speciesGraph.text = "???"
+			healthGraph.text = "-"
+			emotionGraph.text = "-"
+			cleannessGraph.text = "-"
+			
+		} else {
+			
+			nameGraph.text = StatusViewController.myMonster.nickname
+			speciesGraph.text = Monster.speciesList[StatusViewController.myMonster.speciesNum]  + (StatusViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
+			healthGraph.text = healthList[StatusViewController.myMonster.health]
+			emotionGraph.text = emotionList[StatusViewController.myMonster.emotion]
+			cleannessGraph.text = cleannessList[StatusViewController.myMonster.cleanness]
+			
+		}
 	}
 
 	@IBAction func downPressed(_ sender: UIButton) {

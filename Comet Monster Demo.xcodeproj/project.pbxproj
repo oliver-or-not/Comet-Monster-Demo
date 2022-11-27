@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5738EF80293233C600FDA932 /* EvolutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5738EF7F293233C600FDA932 /* EvolutionViewController.swift */; };
+		5738EF82293233D800FDA932 /* NamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5738EF81293233D800FDA932 /* NamingViewController.swift */; };
 		5748FF81292B4F9800923318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF80292B4F9800923318 /* AppDelegate.swift */; };
 		5748FF83292B4F9800923318 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF82292B4F9800923318 /* SceneDelegate.swift */; };
 		5748FF85292B4F9800923318 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF84292B4F9800923318 /* MainViewController.swift */; };
@@ -18,12 +20,14 @@
 		5748FF9D292B64E600923318 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF9C292B64E600923318 /* StatusViewController.swift */; };
 		5748FF9F292B64F200923318 /* CareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FF9E292B64F200923318 /* CareViewController.swift */; };
 		5748FFA1292B650B00923318 /* CareMotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748FFA0292B650B00923318 /* CareMotionViewController.swift */; };
-		5774221D292B6E35003696EF /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774221C292B6E35003696EF /* CreationViewController.swift */; };
+		5774221D292B6E35003696EF /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5774221C292B6E35003696EF /* TutorialViewController.swift */; };
 		57D62687292B9980005E1D24 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D62686292B9980005E1D24 /* WelcomeViewController.swift */; };
 		57D6268A292BABA1005E1D24 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57D62689292BABA1005E1D24 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5738EF7F293233C600FDA932 /* EvolutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionViewController.swift; sourceTree = "<group>"; };
+		5738EF81293233D800FDA932 /* NamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingViewController.swift; sourceTree = "<group>"; };
 		5748FF7D292B4F9800923318 /* Comet Monster Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Comet Monster Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5748FF80292B4F9800923318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5748FF82292B4F9800923318 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +41,7 @@
 		5748FF9C292B64E600923318 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		5748FF9E292B64F200923318 /* CareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareViewController.swift; sourceTree = "<group>"; };
 		5748FFA0292B650B00923318 /* CareMotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareMotionViewController.swift; sourceTree = "<group>"; };
-		5774221C292B6E35003696EF /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		5774221C292B6E35003696EF /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		57D62686292B9980005E1D24 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,11 +92,13 @@
 			isa = PBXGroup;
 			children = (
 				57D62686292B9980005E1D24 /* WelcomeViewController.swift */,
-				5774221C292B6E35003696EF /* CreationViewController.swift */,
+				5774221C292B6E35003696EF /* TutorialViewController.swift */,
 				5748FF84292B4F9800923318 /* MainViewController.swift */,
 				5748FF9C292B64E600923318 /* StatusViewController.swift */,
 				5748FF9E292B64F200923318 /* CareViewController.swift */,
 				5748FFA0292B650B00923318 /* CareMotionViewController.swift */,
+				5738EF7F293233C600FDA932 /* EvolutionViewController.swift */,
+				5738EF81293233D800FDA932 /* NamingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,13 +199,15 @@
 			files = (
 				5748FF85292B4F9800923318 /* MainViewController.swift in Sources */,
 				57D62687292B9980005E1D24 /* WelcomeViewController.swift in Sources */,
+				5738EF80293233C600FDA932 /* EvolutionViewController.swift in Sources */,
 				5748FFA1292B650B00923318 /* CareMotionViewController.swift in Sources */,
-				5774221D292B6E35003696EF /* CreationViewController.swift in Sources */,
+				5774221D292B6E35003696EF /* TutorialViewController.swift in Sources */,
 				5748FF81292B4F9800923318 /* AppDelegate.swift in Sources */,
 				5748FF9F292B64F200923318 /* CareViewController.swift in Sources */,
 				5748FF8B292B4F9800923318 /* Comet_Monster_Demo.xcdatamodeld in Sources */,
 				5748FF83292B4F9800923318 /* SceneDelegate.swift in Sources */,
 				5748FF9D292B64E600923318 /* StatusViewController.swift in Sources */,
+				5738EF82293233D800FDA932 /* NamingViewController.swift in Sources */,
 				5748FF9B292B61D700923318 /* Monster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

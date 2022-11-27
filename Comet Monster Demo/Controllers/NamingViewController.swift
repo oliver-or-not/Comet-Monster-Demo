@@ -1,13 +1,14 @@
 //
-//  CreationViewController.swift
+//  NamingViewController.swift
 //  Comet Monster Demo
 //
-//  Created by Wonil Lee on 2022/11/21.
+//  Created by Wonil Lee on 2022/11/26.
 //
 
+import Foundation
 import UIKit
 
-class CreationViewController: UIViewController {
+class NamingViewController: UIViewController {
 	
 	@IBOutlet weak var nameInputField: UITextField! {
 		didSet {
@@ -15,16 +16,15 @@ class CreationViewController: UIViewController {
 		}
 	}
 	
-	@IBOutlet weak var createButton: UIButton!
-	
+	@IBOutlet weak var doneButton: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.navigationItem.hidesBackButton = true
-		createButton.layer.cornerRadius = 5
+		doneButton.layer.cornerRadius = 5
 	}
 
-	@IBAction func createPressed(_ sender: UIButton) {
+	@IBAction func donePressed(_ sender: UIButton) {
 		if let safeText = nameInputField.text {
 			
 			guard safeText.count >= 1 && safeText.count <= 12 && !safeText.contains(" ") else {
@@ -47,16 +47,12 @@ class CreationViewController: UIViewController {
 				return
 			}
 			
-			CreationViewController.myMonster = Monster()
-			
-			CreationViewController.myMonster.nickname = safeText
-			
-			CreationViewController.myMonster.speciesNum = 1
+			NamingViewController.myMonster.nickname = safeText
 			
 			saveData()
 		}
 		
-		performSegue(withIdentifier: "creationToMain", sender: self)
+		performSegue(withIdentifier: "namingToMain", sender: self)
 		
 	}
 
