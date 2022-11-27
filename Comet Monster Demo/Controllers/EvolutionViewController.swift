@@ -14,12 +14,20 @@ class EvolutionViewController: UIViewController {
 	
 	@IBOutlet weak var okButton: UIButton!
 	
+	@IBOutlet weak var monsterImage: UIImageView!
+	
+	@IBOutlet weak var effectImage: UIImageView!
+	
 	var prevSpeciesNum = 0
 	var nextSpeciesNum = 0
 	
 	var startOrOk = 0
 	
-	var motionTimer = Timer()
+	var moveIndex = 0
+	var effectIndex = 0
+	let effectOrder = [0, 1, 0, 1,    2, 1, 2, 1, 2,     3, 3, 3, 3]
+	let monsterAlphaOrder = [1.0, 1.0, 1.0, 1.0,    1.0, 1.0, 1.0, 1.0, 1.0,     0, 0.33, 0.66, 1.0]
+	let effectAlphaOrder = [1.0, 1.0, 1.0, 1.0,     1.0, 1.0, 1.0, 1.0, 1.0,     1.0, 0.66, 0.33, 0.0]
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -29,18 +37,42 @@ class EvolutionViewController: UIViewController {
 		
 		expLabel.text = "Something's happening!"
 		okButton.setTitle("Start", for: .normal)
+		effectImage.alpha = 0.0
 		
 		loadData()
 		
 		prevSpeciesNum = EvolutionViewController.myMonster.speciesNum
 		nextSpeciesNum = Monster.evolutionSpeciesNum[EvolutionViewController.myMonster.speciesNum]
-		
 	}
 	
-
-	
-	
-	
+	@objc func evolutionTimerFunc() {
+		
+		moveIndex = (moveIndex + 1) % 4
+		
+		DispatchQueue.main.async {
+			if self.effectIndex < 9 {
+				if Monster.isEgg[self.prevSpeciesNum] {
+					self.monsterImage.image = UIViewController.monsterImageArray[self.prevSpeciesNum][self.moveIndex]
+				} else {
+					self.monsterImage.image = UIViewController.monsterImageArray[self.prevSpeciesNum][self.moveIndex % 2]
+				}
+			} else {
+				self.monsterImage.image = UIViewController.monsterImageArray[self.nextSpeciesNum][self.moveIndex % 2]
+			}
+			
+			if self.effectIndex < 13 {
+				self.effectImage.image = UIViewController.evolutionEffectArray[self.effectOrder[self.effectIndex]]
+				self.effectImage.alpha = self.effectAlphaOrder[self.effectIndex]
+				self.monsterImage.alpha = self.monsterAlphaOrder[self.effectIndex]
+			} else {
+				self.effectImage.alpha = 0.0
+			}
+			
+			self.effectIndex += 1
+		}
+		
+		
+	}
 	@IBAction func okPressed(_ sender: UIButton) {
 		if startOrOk == 0 {//start pressed
 			startOrOk = 1
@@ -56,7 +88,8 @@ class EvolutionViewController: UIViewController {
 			
 			saveData()
 			
-			motionTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(motionTimerFunc), userInfo: nil, repeats: false)
+			Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(motionTimerFunc), userInfo: nil, repeats: false)
+			Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(evolutionTimerFunc), userInfo: nil, repeats: true)
 			
 			DispatchQueue.main.async {
 				self.okButton.isEnabled = false
@@ -95,3 +128,4 @@ class EvolutionViewController: UIViewController {
 	
 	
 }
+

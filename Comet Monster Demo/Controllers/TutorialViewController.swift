@@ -36,7 +36,7 @@ class TutorialViewController: UIViewController {
 		explanationLabel.clipsToBounds = true
 		explanationLabel.layer.cornerRadius = 15
 		
-		Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(tutorialTimeFunc), userInfo: nil, repeats: false)
+		Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(tutorialTimeFunc), userInfo: nil, repeats: false)
 		
 	}
 	
@@ -60,7 +60,7 @@ class TutorialViewController: UIViewController {
 		
 		DispatchQueue.main.async {
 			self.explanationLabel.text = self.explanationArray[self.pageNum]
-			Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.tutorialTimeFunc), userInfo: nil, repeats: false)
+			Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.tutorialTimeFunc), userInfo: nil, repeats: false)
 		}
 	}
 

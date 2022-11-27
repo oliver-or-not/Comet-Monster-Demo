@@ -15,6 +15,10 @@ class MainViewController: UIViewController {
 	
 	@IBOutlet weak var careButton: UIButton!
 	
+	@IBOutlet weak var monsterImage: UIImageView!
+	
+	var moveIndex = 0
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -27,6 +31,8 @@ class MainViewController: UIViewController {
 		hatchButton.setTitle("", for: .normal)
 		hatchButton.isEnabled = false
 		hatchButton.alpha = 0.0
+		
+		monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][0]
 		
 		Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(mainTimerFunc), userInfo: nil, repeats: true)
 	}
@@ -65,24 +71,34 @@ class MainViewController: UIViewController {
 		
 		saveData()
 		
-		if !UIViewController.myMonster.hatchOpen && !UIViewController.myMonster.evolveOpen {
-			hatchButton.setTitle("", for: .normal)
-			hatchButton.isEnabled = false
-			hatchButton.alpha = 0.0
-		} else if UIViewController.myMonster.hatchOpen {
-			hatchButton.setTitle("Hatch", for: .normal)
-			hatchButton.isEnabled = true
-			hatchButton.alpha = 1.0
-			hatchButton.backgroundColor = UIColor(rgb: 0xFF8F78)
-		} else if UIViewController.myMonster.evolveOpen {
-			hatchButton.setTitle("Evolve", for: .normal)
-			hatchButton.isEnabled = true
-			hatchButton.alpha = 1.0
-			hatchButton.backgroundColor = UIColor(rgb: 0xFF8F78)
+		if Monster.isEgg[UIViewController.myMonster.speciesNum] {
+			moveIndex = (moveIndex + 1) % 4
 		} else {
-			hatchButton.setTitle("", for: .normal)
-			hatchButton.isEnabled = false
-			hatchButton.alpha = 0.0
+			moveIndex = (moveIndex + 1) % 2
+		}
+		
+		DispatchQueue.main.async {
+			self.monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][self.moveIndex]
+			
+			if !UIViewController.myMonster.hatchOpen && !UIViewController.myMonster.evolveOpen {
+				self.hatchButton.setTitle("", for: .normal)
+				self.hatchButton.isEnabled = false
+				self.hatchButton.alpha = 0.0
+			} else if UIViewController.myMonster.hatchOpen {
+				self.hatchButton.setTitle("Hatch", for: .normal)
+				self.hatchButton.isEnabled = true
+				self.hatchButton.alpha = 1.0
+				self.hatchButton.backgroundColor = UIColor(rgb: 0xFF8F78)
+			} else if UIViewController.myMonster.evolveOpen {
+				self.hatchButton.setTitle("Evolve", for: .normal)
+				self.hatchButton.isEnabled = true
+				self.hatchButton.alpha = 1.0
+				self.hatchButton.backgroundColor = UIColor(rgb: 0xFF8F78)
+			} else {
+				self.hatchButton.setTitle("", for: .normal)
+				self.hatchButton.isEnabled = false
+				self.hatchButton.alpha = 0.0
+			}
 		}
 	}
 	

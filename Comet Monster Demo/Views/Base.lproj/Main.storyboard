@@ -252,6 +252,7 @@
                     <connections>
                         <outlet property="careButton" destination="IuF-uF-Led" id="9yA-Iv-SaD"/>
                         <outlet property="hatchButton" destination="I2G-5F-cZg" id="07X-Zd-6i5"/>
+                        <outlet property="monsterImage" destination="MQY-PH-Dgl" id="NIR-Ku-Yc7"/>
                         <outlet property="statusButton" destination="wa9-Zb-bjH" id="Fe5-D7-U11"/>
                         <segue destination="tiQ-dg-PoU" kind="presentation" identifier="mainToStatus" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="XDP-ib-TBG"/>
                         <segue destination="EBw-kZ-Xmn" kind="presentation" identifier="mainToCare" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="KNg-d1-LYE"/>
@@ -645,8 +646,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="84" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-Zq-Uhh">
-                                <rect key="frame" x="121.66666666666669" y="242" width="150" height="408"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-Zq-Uhh">
+                                <rect key="frame" x="121.66666666666669" y="288.66666666666669" width="150" height="315.00000000000006"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rrf-NJ-O8t">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -656,16 +657,16 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="words words" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-qt-U3n">
-                                        <rect key="frame" x="19.666666666666679" y="234" width="110.33333333333331" height="45"/>
+                                        <rect key="frame" x="19.666666666666679" y="165" width="110.33333333333331" height="90"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="Qpd-cO-Vym"/>
+                                            <constraint firstAttribute="height" constant="90" id="Qpd-cO-Vym"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xm-cP-nwY">
-                                        <rect key="frame" x="29.999999999999986" y="363" width="90" height="45"/>
+                                        <rect key="frame" x="29.999999999999986" y="269.99999999999994" width="90" height="45"/>
                                         <color key="backgroundColor" red="0.5568627451" green="0.64705882349999999" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Sgc-QC-LCS"/>
@@ -682,16 +683,27 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCp-hS-aVP">
+                                <rect key="frame" x="121.66666666666669" y="288.66666666666669" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="8Jy-5X-dlc"/>
+                                    <constraint firstAttribute="width" constant="150" id="BbS-uQ-lPY"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gR3-Se-3jA"/>
                         <color key="backgroundColor" red="0.85098039219999999" green="0.88235294119999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kZ1-Zq-Uhh" firstAttribute="centerY" secondItem="9dA-lV-dOG" secondAttribute="centerY" constant="20" id="6JR-dX-mIL"/>
+                            <constraint firstItem="xCp-hS-aVP" firstAttribute="centerX" secondItem="9dA-lV-dOG" secondAttribute="centerX" id="9MD-91-qY6"/>
                             <constraint firstItem="kZ1-Zq-Uhh" firstAttribute="centerX" secondItem="9dA-lV-dOG" secondAttribute="centerX" id="9TM-Yj-PAm"/>
+                            <constraint firstItem="xCp-hS-aVP" firstAttribute="centerY" secondItem="9dA-lV-dOG" secondAttribute="centerY" constant="-62.5" id="jcs-E5-pYp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="effectImage" destination="xCp-hS-aVP" id="aGi-Jl-46D"/>
                         <outlet property="expLabel" destination="aMG-qt-U3n" id="ddH-bi-hZK"/>
+                        <outlet property="monsterImage" destination="Rrf-NJ-O8t" id="bgc-d3-2SS"/>
                         <outlet property="okButton" destination="2xm-cP-nwY" id="MDd-ia-SvS"/>
                         <segue destination="DvW-W3-WJD" kind="presentation" identifier="evolutionToNaming" modalPresentationStyle="fullScreen" id="III-Xy-2IV"/>
                     </connections>
@@ -790,7 +802,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DGb-2U-Wnm"/>
+        <segue reference="Xiw-04-4hC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="welcome background" width="400" height="1000"/>
