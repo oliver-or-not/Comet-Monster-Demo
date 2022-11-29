@@ -48,13 +48,6 @@ class EvolutionViewController: UIViewController {
 		
 	}
 	
-	override func viewDidAppear(_ animated: Bool) {
-		if UIViewController.letsGoToMain == true {
-			UIViewController.letsGoToMain = false
-			dismiss(animated: true)
-		}
-	}
-	
 	@objc func evolutionTimerFunc() {
 		
 		moveIndex = (moveIndex + 1) % 4

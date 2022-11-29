@@ -793,16 +793,17 @@
                     <connections>
                         <outlet property="doneButton" destination="6K8-Po-HgS" id="e5w-GB-Tad"/>
                         <outlet property="nameInputField" destination="1li-oa-jvl" id="6B3-hW-Ftk"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="namingToMain" modalPresentationStyle="fullScreen" id="Xiw-04-4hC"/>
+                        <segue destination="f0z-Y3-JTX" kind="unwind" identifier="returnFromNamingToMain" unwindAction="unwindToMainViewControllerWithSegue:" id="avf-eq-39f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9M-AD-0K4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="f0z-Y3-JTX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1425" y="968"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xiw-04-4hC"/>
+        <segue reference="DAR-3o-fzd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="welcome background" width="400" height="1000"/>

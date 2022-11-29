@@ -17,7 +17,7 @@ class TutorialViewController: UIViewController {
 		"One day, It started to fall special comets everywhere on earth.",
 		"People found some eggs in those comets.",
 		"Some monsters came out from those eggs...",
-		"and people started to call them 'comet monsters.'",
+		"and people call them 'comet monsters.'",
 		"... Do you want an egg? Will you try to breed a comet monster?"]
 	
 	var pageNum = 0

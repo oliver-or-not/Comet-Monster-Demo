@@ -53,9 +53,7 @@ class NamingViewController: UIViewController {
 		}
 		
 		
-		
-		UIViewController.letsGoToMain = true
-		dismiss(animated: true)
+		performSegue(withIdentifier: "returnFromNamingToMain", sender: self)
 		
 	}
 

@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
 	
 	@IBOutlet weak var monsterImage: UIImageView!
 	
+	@IBAction func unwindToMainViewController(segue: UIStoryboardSegue) {}
+	
 	var moveIndex = 0
 	
 	override func viewDidLoad() {
