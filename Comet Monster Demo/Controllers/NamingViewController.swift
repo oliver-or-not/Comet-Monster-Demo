@@ -10,6 +10,14 @@ import UIKit
 
 class NamingViewController: UIViewController {
 	
+	var motionIndex = 0
+	
+	var timer = Timer()
+	
+	@IBOutlet weak var monsterImage: UIImageView!
+	
+	@IBOutlet weak var speciesGraph: UILabel!
+	
 	@IBOutlet weak var nameInputField: UITextField! {
 		didSet {
 			nameInputField.delegate = self
@@ -22,8 +30,36 @@ class NamingViewController: UIViewController {
 		super.viewDidLoad()
 		self.navigationItem.hidesBackButton = true
 		doneButton.layer.cornerRadius = 5
+		
+		loadData()
+		
+		monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][motionIndex]
+		
+		speciesGraph.text = Monster.speciesList[StatusViewController.myMonster.speciesNum]  + (StatusViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(true)
+		loadData()
+		namingTimerFunc()
+		timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(namingTimerFunc), userInfo: nil, repeats: true)
 	}
 
+	@objc func namingTimerFunc() {
+		print("namingTimerFunc working...")
+		
+		if Monster.isEgg[UIViewController.myMonster.speciesNum] {
+			motionIndex = (motionIndex + 1) % 4
+		} else {
+			motionIndex = (motionIndex + 1) % 2
+		}
+		
+		DispatchQueue.main.async {
+			self.monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][self.motionIndex]
+		}
+	}
+	
+	
 	@IBAction func donePressed(_ sender: UIButton) {
 		if let safeText = nameInputField.text {
 			
@@ -55,6 +91,11 @@ class NamingViewController: UIViewController {
 		
 		performSegue(withIdentifier: "returnFromNamingToMain", sender: self)
 		
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(true)
+		timer.invalidate()
 	}
 
 }

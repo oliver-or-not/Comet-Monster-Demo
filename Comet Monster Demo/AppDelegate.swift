@@ -133,6 +133,8 @@ extension UIViewController {
 extension UIViewController {
 	static let monsterImageArray = [[#imageLiteral(resourceName: "000 plain egg r2"), #imageLiteral(resourceName: "000 plain egg l1"), #imageLiteral(resourceName: "000 plain egg l2"), #imageLiteral(resourceName: "000 plain egg r1")], [#imageLiteral(resourceName: "001 dinodino r1"), #imageLiteral(resourceName: "001 dinodino r2"), #imageLiteral(resourceName: "001 dinodino l1"), #imageLiteral(resourceName: "001 dinodino l2")], [#imageLiteral(resourceName: "002 dinorigo r1"), #imageLiteral(resourceName: "002 dinorigo r2"), #imageLiteral(resourceName: "002 dinorigo l1"), #imageLiteral(resourceName: "002 dinorigo l2")]]
 	static let evolutionEffectArray = [#imageLiteral(resourceName: "effect evolution 1"), #imageLiteral(resourceName: "effect evolution 2"), #imageLiteral(resourceName: "effect evolution 3"), #imageLiteral(resourceName: "effect evolution 4")]
+	static let toolArray = [#imageLiteral(resourceName: "food"), #imageLiteral(resourceName: "play"), #imageLiteral(resourceName: "wash")]
+	static let statusSymbolArray = [#imageLiteral(resourceName: "health good"), #imageLiteral(resourceName: "health bad"), #imageLiteral(resourceName: "emotion good"), #imageLiteral(resourceName: "emotion bad"), #imageLiteral(resourceName: "cleanness good"), #imageLiteral(resourceName: "cleanness bad")]
 }
 
 //MARK: - Using Hexadecimal Expressions in UIColor

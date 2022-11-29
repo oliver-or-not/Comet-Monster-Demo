@@ -9,6 +9,8 @@ import UIKit
 
 class TutorialViewController: UIViewController {
 	
+	var timer = Timer()
+	
 	@IBOutlet weak var explanationLabel: UILabel!
 	
 	@IBOutlet weak var okButton: UIButton!
@@ -35,10 +37,13 @@ class TutorialViewController: UIViewController {
 		explanationLabel.text = explanationArray[0]
 		explanationLabel.clipsToBounds = true
 		explanationLabel.layer.cornerRadius = 15
-		
-		Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(tutorialTimeFunc), userInfo: nil, repeats: false)
-		
 	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(true)
+		timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(tutorialTimeFunc), userInfo: nil, repeats: false)
+	}
+	
 	
 	@IBAction func okPressed(_ sender: UIButton) {
 		
@@ -65,11 +70,17 @@ class TutorialViewController: UIViewController {
 	}
 
 	@objc func tutorialTimeFunc() {
+		print("tutorialTimerFunc working...")
 		okButton.isEnabled = true
 		okButton.backgroundColor = UIColor(rgb: 0x8EA5EB)
 		if pageNum == explanationArray.count - 1 {
 			okButton.setTitle("OK", for: .normal)
 		}
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(true)
+		timer.invalidate()
 	}
 	
 }

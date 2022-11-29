@@ -19,7 +19,9 @@ class MainViewController: UIViewController {
 	
 	@IBAction func unwindToMainViewController(segue: UIStoryboardSegue) {}
 	
-	var moveIndex = 0
+	var motionIndex = 0
+	
+	var timer = Timer()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -35,8 +37,13 @@ class MainViewController: UIViewController {
 		hatchButton.alpha = 0.0
 		
 		monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][0]
-		
-		Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(mainTimerFunc), userInfo: nil, repeats: true)
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(true)
+		loadData()
+		mainTimerFunc()
+		timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(mainTimerFunc), userInfo: nil, repeats: true)
 	}
 	
 	@IBAction func statusPressed(_ sender: UIButton) {
@@ -53,6 +60,8 @@ class MainViewController: UIViewController {
 	
 	@objc func mainTimerFunc() {
 		
+		print("mainTimerFunc working...")
+		
 		if Monster.canEvolve[UIViewController.myMonster.speciesNum] && UIViewController.myMonster.lifeLength > Monster.evolutionTime[UIViewController.myMonster.speciesNum] {
 			if Monster.isEgg[UIViewController.myMonster.speciesNum] {
 				UIViewController.myMonster.hatchOpen = true
@@ -63,24 +72,26 @@ class MainViewController: UIViewController {
 		
 		saveData()
 		
-		if UIViewController.myMonster.health == 0 {
-			UIViewController.myMonster = Monster()
-		} else if UIViewController.myMonster.emotion == 0 {
-			UIViewController.myMonster = Monster()
-		} else if UIViewController.myMonster.cleanness == 0 {
-			UIViewController.myMonster = Monster()
+		if !Monster.isEgg[UIViewController.myMonster.speciesNum] {
+			if UIViewController.myMonster.health == 0 {
+				UIViewController.myMonster = Monster()
+			} else if UIViewController.myMonster.emotion == 0 {
+				UIViewController.myMonster = Monster()
+			} else if UIViewController.myMonster.cleanness == 0 {
+				UIViewController.myMonster = Monster()
+			}
 		}
 		
 		saveData()
 		
 		if Monster.isEgg[UIViewController.myMonster.speciesNum] {
-			moveIndex = (moveIndex + 1) % 4
+			motionIndex = (motionIndex + 1) % 4
 		} else {
-			moveIndex = (moveIndex + 1) % 2
+			motionIndex = (motionIndex + 1) % 2
 		}
 		
 		DispatchQueue.main.async {
-			self.monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][self.moveIndex]
+			self.monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][self.motionIndex]
 			
 			if !UIViewController.myMonster.hatchOpen && !UIViewController.myMonster.evolveOpen {
 				self.hatchButton.setTitle("", for: .normal)
@@ -106,5 +117,10 @@ class MainViewController: UIViewController {
 	
 	@IBAction func hatchPressed(_ sender: UIButton) {
 		performSegue(withIdentifier: "mainToEvolution", sender: self)
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(true)
+		timer.invalidate()
 	}
 }

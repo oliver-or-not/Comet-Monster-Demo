@@ -446,6 +446,7 @@
                         <outlet property="downButton" destination="RdV-S6-x39" id="ukI-Dk-9mr"/>
                         <outlet property="emotionGraph" destination="duQ-Js-q4c" id="l6f-iq-JsC"/>
                         <outlet property="healthGraph" destination="Y1G-Lk-zx0" id="ILe-um-YCq"/>
+                        <outlet property="monsterImage" destination="nx6-05-GoN" id="Ink-Z2-wU7"/>
                         <outlet property="nameGraph" destination="We8-MD-0Dw" id="d6V-hs-BOS"/>
                         <outlet property="speciesGraph" destination="3lh-MO-PEA" id="ndQ-Ep-oxQ"/>
                     </connections>
@@ -565,6 +566,7 @@
                     <connections>
                         <outlet property="downButton" destination="l0U-H3-wTa" id="aJz-5a-yCz"/>
                         <outlet property="foodButton" destination="pcb-9E-qSf" id="C5b-SF-jQp"/>
+                        <outlet property="monsterImage" destination="4b6-1H-lTX" id="j0D-9I-f9l"/>
                         <outlet property="playButton" destination="uiT-El-oA6" id="SPq-zG-e6P"/>
                         <outlet property="washButton" destination="hrH-cX-kVx" id="m6B-k8-9Re"/>
                         <segue destination="hZu-xJ-g4l" kind="presentation" identifier="careToCareMotion" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="0em-zl-z0p"/>
@@ -603,22 +605,43 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G4e-cI-lXC">
+                                <rect key="frame" x="297.66666666666669" y="272.33333333333331" width="37.666666666666686" height="37.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37.5" id="VF1-v5-kqj"/>
+                                    <constraint firstAttribute="width" constant="37.5" id="W33-lv-RkK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ouN-Ud-Lty">
+                                <rect key="frame" x="267.66666666666669" y="317.33333333333331" width="37.666666666666686" height="37.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37.5" id="4Tv-jd-5jc"/>
+                                    <constraint firstAttribute="width" constant="37.5" id="4el-zd-TVf"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HuY-T6-G1Z"/>
                         <color key="backgroundColor" red="0.85098039219999999" green="0.88235294119999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="G4e-cI-lXC" firstAttribute="centerX" secondItem="Fg9-Yl-eEZ" secondAttribute="centerX" constant="120" id="AVh-rS-q6y"/>
+                            <constraint firstItem="ouN-Ud-Lty" firstAttribute="centerX" secondItem="Fg9-Yl-eEZ" secondAttribute="centerX" constant="90" id="GXA-en-2hV"/>
                             <constraint firstItem="ujk-MP-dFK" firstAttribute="centerY" secondItem="Fg9-Yl-eEZ" secondAttribute="centerY" constant="50" id="Mdj-s9-cFf"/>
+                            <constraint firstItem="ouN-Ud-Lty" firstAttribute="centerY" secondItem="Fg9-Yl-eEZ" secondAttribute="centerY" constant="-90" id="NSU-1c-vi8"/>
                             <constraint firstItem="ujk-MP-dFK" firstAttribute="centerX" secondItem="Fg9-Yl-eEZ" secondAttribute="centerX" id="OI2-Nq-smr"/>
+                            <constraint firstItem="G4e-cI-lXC" firstAttribute="centerY" secondItem="Fg9-Yl-eEZ" secondAttribute="centerY" constant="-135" id="ryU-O6-shg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8vt-2H-yPb"/>
                     <connections>
                         <outlet property="changeGraph" destination="aqM-Me-P4f" id="Ifw-0Q-j6l"/>
+                        <outlet property="monsterImage" destination="HhR-VF-lyo" id="OB3-Lt-3Et"/>
+                        <outlet property="toolImage1" destination="G4e-cI-lXC" id="Mle-ye-JiE"/>
+                        <outlet property="toolImage2" destination="ouN-Ud-Lty" id="SeD-5R-h8E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0JB-2J-8Z3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3878.6259541984732" y="317.6056338028169"/>
+            <point key="canvasLocation" x="3878.6259541984732" y="316.90140845070425"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ybh-Dd-b4v">
@@ -646,8 +669,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-Zq-Uhh">
-                                <rect key="frame" x="121.66666666666669" y="288.66666666666669" width="150" height="315.00000000000006"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-Zq-Uhh">
+                                <rect key="frame" x="121.66666666666669" y="261" width="150" height="330"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rrf-NJ-O8t">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -656,17 +679,17 @@
                                             <constraint firstAttribute="height" constant="150" id="R0b-Es-ntC"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="words words" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-qt-U3n">
-                                        <rect key="frame" x="19.666666666666679" y="165" width="110.33333333333331" height="90"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exp Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-qt-U3n">
+                                        <rect key="frame" x="33.333333333333336" y="160" width="83.333333333333314" height="115"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="90" id="Qpd-cO-Vym"/>
+                                            <constraint firstAttribute="height" constant="115" id="Qpd-cO-Vym"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xm-cP-nwY">
-                                        <rect key="frame" x="29.999999999999986" y="269.99999999999994" width="90" height="45"/>
+                                        <rect key="frame" x="29.999999999999986" y="285" width="90" height="45"/>
                                         <color key="backgroundColor" red="0.5568627451" green="0.64705882349999999" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Sgc-QC-LCS"/>
@@ -684,7 +707,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCp-hS-aVP">
-                                <rect key="frame" x="121.66666666666669" y="288.66666666666669" width="150" height="150"/>
+                                <rect key="frame" x="121.66666666666669" y="261" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="8Jy-5X-dlc"/>
                                     <constraint firstAttribute="width" constant="150" id="BbS-uQ-lPY"/>
@@ -694,10 +717,10 @@
                         <viewLayoutGuide key="safeArea" id="gR3-Se-3jA"/>
                         <color key="backgroundColor" red="0.85098039219999999" green="0.88235294119999996" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="kZ1-Zq-Uhh" firstAttribute="centerY" secondItem="9dA-lV-dOG" secondAttribute="centerY" constant="20" id="6JR-dX-mIL"/>
+                            <constraint firstItem="kZ1-Zq-Uhh" firstAttribute="centerY" secondItem="9dA-lV-dOG" secondAttribute="centerY" id="6JR-dX-mIL"/>
                             <constraint firstItem="xCp-hS-aVP" firstAttribute="centerX" secondItem="9dA-lV-dOG" secondAttribute="centerX" id="9MD-91-qY6"/>
                             <constraint firstItem="kZ1-Zq-Uhh" firstAttribute="centerX" secondItem="9dA-lV-dOG" secondAttribute="centerX" id="9TM-Yj-PAm"/>
-                            <constraint firstItem="xCp-hS-aVP" firstAttribute="centerY" secondItem="9dA-lV-dOG" secondAttribute="centerY" constant="-62.5" id="jcs-E5-pYp"/>
+                            <constraint firstItem="xCp-hS-aVP" firstAttribute="centerY" secondItem="9dA-lV-dOG" secondAttribute="centerY" constant="-90" id="jcs-E5-pYp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -705,7 +728,7 @@
                         <outlet property="expLabel" destination="aMG-qt-U3n" id="ddH-bi-hZK"/>
                         <outlet property="monsterImage" destination="Rrf-NJ-O8t" id="bgc-d3-2SS"/>
                         <outlet property="okButton" destination="2xm-cP-nwY" id="MDd-ia-SvS"/>
-                        <segue destination="DvW-W3-WJD" kind="presentation" identifier="evolutionToNaming" modalPresentationStyle="fullScreen" id="III-Xy-2IV"/>
+                        <segue destination="DvW-W3-WJD" kind="presentation" identifier="evolutionToNaming" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="III-Xy-2IV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2b-qV-nUW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -720,8 +743,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Eec-Ld-tYi">
-                                <rect key="frame" x="56.666666666666657" y="228.66666666666663" width="280" height="435"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Eec-Ld-tYi">
+                                <rect key="frame" x="56.666666666666657" y="201" width="280" height="390"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your monster!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-73-xoD">
                                         <rect key="frame" x="52.000000000000014" y="0.0" width="175.66666666666669" height="45"/>
@@ -733,14 +756,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8DP-Il-Ele">
-                                        <rect key="frame" x="65" y="95.000000000000028" width="150" height="150"/>
+                                        <rect key="frame" x="65" y="60" width="150" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="gDK-Jo-lhp"/>
                                             <constraint firstAttribute="height" constant="150" id="vEA-gd-ujA"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGL-Uq-XOe">
+                                        <rect key="frame" x="79.666666666666686" y="225" width="120.66666666666669" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="qBQ-8U-QuK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jbp-Wq-jJq">
-                                        <rect key="frame" x="0.0" y="295" width="280" height="45"/>
+                                        <rect key="frame" x="0.0" y="285" width="280" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72f-Mo-Kd1">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="45"/>
@@ -764,7 +796,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6K8-Po-HgS">
-                                        <rect key="frame" x="95" y="390" width="90" height="45"/>
+                                        <rect key="frame" x="95" y="345" width="90" height="45"/>
                                         <color key="backgroundColor" red="0.5568627451" green="0.64705882349999999" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="NkF-VX-SJ2"/>
@@ -785,14 +817,16 @@
                         <viewLayoutGuide key="safeArea" id="Lx6-ag-tGq"/>
                         <color key="backgroundColor" red="0.85098039219999999" green="0.88235294119999996" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Eec-Ld-tYi" firstAttribute="centerY" secondItem="ijk-ab-MzM" secondAttribute="centerY" constant="20" id="RGl-2J-jGg"/>
+                            <constraint firstItem="Eec-Ld-tYi" firstAttribute="centerY" secondItem="ijk-ab-MzM" secondAttribute="centerY" constant="-30" id="RGl-2J-jGg"/>
                             <constraint firstItem="Eec-Ld-tYi" firstAttribute="centerX" secondItem="ijk-ab-MzM" secondAttribute="centerX" id="oyZ-p5-xQN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WC6-rB-6lw"/>
                     <connections>
                         <outlet property="doneButton" destination="6K8-Po-HgS" id="e5w-GB-Tad"/>
+                        <outlet property="monsterImage" destination="8DP-Il-Ele" id="n17-4J-wRr"/>
                         <outlet property="nameInputField" destination="1li-oa-jvl" id="6B3-hW-Ftk"/>
+                        <outlet property="speciesGraph" destination="QGL-Uq-XOe" id="Kf3-RE-INp"/>
                         <segue destination="f0z-Y3-JTX" kind="unwind" identifier="returnFromNamingToMain" unwindAction="unwindToMainViewControllerWithSegue:" id="avf-eq-39f"/>
                     </connections>
                 </viewController>

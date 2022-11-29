@@ -9,15 +9,21 @@ import UIKit
 
 class CareViewController: UIViewController {
 
+	var careChoice = ""
+	
+	var motionIndex = 0
+	
+	var timer = Timer()
+	
 	@IBOutlet weak var downButton: UIButton!
+	
+	@IBOutlet weak var monsterImage: UIImageView!
 	
 	@IBOutlet weak var foodButton: UIButton!
 	
 	@IBOutlet weak var playButton: UIButton!
 	
 	@IBOutlet weak var washButton: UIButton!
-
-	var careChoice = ""
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -31,6 +37,8 @@ class CareViewController: UIViewController {
 		
 		loadData()
 		
+		monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][motionIndex]
+		
 		if Monster.isEgg[CareViewController.myMonster.speciesNum] {
 			foodButton.isHidden = true
 			playButton.isHidden = true
@@ -39,6 +47,27 @@ class CareViewController: UIViewController {
 			foodButton.isHidden = false
 			playButton.isHidden = false
 			washButton.isHidden = false
+		}
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(true)
+		loadData()
+		careTimerFunc()
+		timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(careTimerFunc), userInfo: nil, repeats: true)
+	}
+	
+	@objc func careTimerFunc() {
+		print("careTimerFunc working...")
+		
+		if Monster.isEgg[UIViewController.myMonster.speciesNum] {
+			motionIndex = (motionIndex + 1) % 4
+		} else {
+			motionIndex = (motionIndex + 1) % 2
+		}
+		
+		DispatchQueue.main.async {
+			self.monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][self.motionIndex]
 		}
 	}
 	
@@ -54,7 +83,7 @@ class CareViewController: UIViewController {
 	}
 	
 	@IBAction func washPressed(_ sender: UIButton) {
-		careChoice = "Shower"
+		careChoice = "Wash"
 		performSegue(withIdentifier: "careToCareMotion", sender: self)
 	}
 	
@@ -71,5 +100,8 @@ class CareViewController: UIViewController {
 		
 	}
 	
-	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(true)
+		timer.invalidate()
+	}
 }

@@ -33,14 +33,19 @@ struct Monster: Codable {
 	var addedEmotion: Int = 0
 	var addedCleanness: Int = 0
 	
+	
+	var healthDecreasingTime = 40
+	var emotionDecreasingTime = 80
+	var cleannessDecreasingTime = 60
+
 	var subtractedHealth: Int {
-		lifeLength / 20
+		lifeLength / healthDecreasingTime
 	}
 	var subtractedEmotion: Int {
-		lifeLength / 40
+		lifeLength / emotionDecreasingTime
 	}
 	var subtractedCleanness: Int {
-		lifeLength / 30
+		lifeLength / cleannessDecreasingTime
 	}
 	
 	static var speciesList = ["???", "Dinodino", "Dinorigo"]
@@ -49,6 +54,6 @@ struct Monster: Codable {
 	static var canEvolve = [true, true, false]
 	static var evolutionSpeciesNum = [1, 2, -1]
 	static var previousFormIndex = [-1, 0, 1]
-	static var evolutionTime = [3, 20, -1]
+	static var evolutionTime = [5, 30, -1]
 }
 
