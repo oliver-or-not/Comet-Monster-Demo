@@ -13,7 +13,7 @@ struct Monster: Codable {
 	var speciesNum: Int = 0
 	var birthDate = Date()
 	var lifeLength: Int {
-		Int(Date().timeIntervalSince(MainViewController.myMonster.birthDate))
+		Int(Date().timeIntervalSince(birthDate))
 	}
 	
 	var hatchOpen = false
