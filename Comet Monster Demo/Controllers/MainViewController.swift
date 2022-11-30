@@ -30,8 +30,8 @@ class MainViewController: UIViewController {
 		hatchButton.layer.cornerRadius = 5
 		statusButton.layer.cornerRadius = 5
 		careButton.layer.cornerRadius = 5
-		loadData()
 	
+//		loadData()
 		hatchButton.setTitle("", for: .normal)
 		hatchButton.isEnabled = false
 		hatchButton.alpha = 0.0
@@ -41,7 +41,6 @@ class MainViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
-		loadData()
 		mainTimerFunc()
 		timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(mainTimerFunc), userInfo: nil, repeats: true)
 	}

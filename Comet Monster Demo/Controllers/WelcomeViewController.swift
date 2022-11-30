@@ -18,14 +18,13 @@ class WelcomeViewController: UIViewController {
 		newStartButton.layer.cornerRadius = 5
 		continueButton.layer.cornerRadius = 5
 		loadData()
-		if WelcomeViewController.myMonster.nickname == "" {
+		if UIViewController.myMonster.nickname == "" {
 			continueButton.backgroundColor = .darkGray
 		}
-//		myMonster.nickname = "aaa"
 	}
 	
 	@IBAction func newStartPressed(_ sender: UIButton) {
-		if WelcomeViewController.myMonster.nickname == "" {
+		if UIViewController.myMonster.nickname == "" {
 			performSegue(withIdentifier: "welcomeToCreation", sender: self)
 		} else {
 			let alert = UIAlertController(title: "Alert", message: "Will you erase your previous data?", preferredStyle: .alert)
@@ -60,7 +59,7 @@ class WelcomeViewController: UIViewController {
 	}
 	
 	@IBAction func continuePressed(_ sender: UIButton) {
-		if WelcomeViewController.myMonster.nickname == "" {
+		if UIViewController.myMonster.nickname == "" {
 			let alert = UIAlertController(title: "No Previous Data", message: "Press 'New Start' button instead.", preferredStyle: .alert)
 			
 			let action = UIAlertAction(title: "OK", style: .default)

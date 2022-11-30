@@ -35,11 +35,11 @@ class CareViewController: UIViewController {
 		playButton.layer.cornerRadius = 5
 		washButton.layer.cornerRadius = 5
 		
-		loadData()
+//		loadData()
 		
 		monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][motionIndex]
 		
-		if Monster.isEgg[CareViewController.myMonster.speciesNum] {
+		if Monster.isEgg[UIViewController.myMonster.speciesNum] {
 			foodButton.isHidden = true
 			playButton.isHidden = true
 			washButton.isHidden = true
@@ -52,7 +52,7 @@ class CareViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
-		loadData()
+//		loadData()
 		careTimerFunc()
 		timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(careTimerFunc), userInfo: nil, repeats: true)
 	}

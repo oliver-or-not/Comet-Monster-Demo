@@ -56,7 +56,7 @@ class TutorialViewController: UIViewController {
 		
 		guard pageNum < explanationArray.count else {
 			
-			TutorialViewController.myMonster = Monster()
+			UIViewController.myMonster = Monster()
 			saveData()
 			
 			performSegue(withIdentifier: "tutorialToMain", sender: self)

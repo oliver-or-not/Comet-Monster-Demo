@@ -38,11 +38,11 @@ class StatusViewController: UIViewController {
 		
 		downButton.layer.cornerRadius = 20
 		
-		loadData()
+//		loadData()
 		
 		monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][motionIndex]
 		
-		if Monster.isEgg[StatusViewController.myMonster.speciesNum] {
+		if Monster.isEgg[UIViewController.myMonster.speciesNum] {
 			
 			nameGraph.text = "???"
 			speciesGraph.text = "egg"
@@ -52,17 +52,17 @@ class StatusViewController: UIViewController {
 			
 		} else {
 			
-			nameGraph.text = StatusViewController.myMonster.nickname
-			speciesGraph.text = Monster.speciesList[StatusViewController.myMonster.speciesNum]  + (StatusViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
-			healthGraph.text = healthList[StatusViewController.myMonster.health]
-			emotionGraph.text = emotionList[StatusViewController.myMonster.emotion]
-			cleannessGraph.text = cleannessList[StatusViewController.myMonster.cleanness]
+			nameGraph.text = UIViewController.myMonster.nickname
+			speciesGraph.text = Monster.speciesList[UIViewController.myMonster.speciesNum]  + (UIViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
+			healthGraph.text = healthList[UIViewController.myMonster.health]
+			emotionGraph.text = emotionList[UIViewController.myMonster.emotion]
+			cleannessGraph.text = cleannessList[UIViewController.myMonster.cleanness]
 		}
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
-		loadData()
+//		loadData()
 		statusTimerFunc()
 		timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(statusTimerFunc), userInfo: nil, repeats: true)
 	}
@@ -80,7 +80,7 @@ class StatusViewController: UIViewController {
 		DispatchQueue.main.async {
 			self.monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][self.motionIndex]
 			
-			if Monster.isEgg[StatusViewController.myMonster.speciesNum] {
+			if Monster.isEgg[UIViewController.myMonster.speciesNum] {
 				
 				self.nameGraph.text = "???"
 				self.speciesGraph.text = "egg"
@@ -90,11 +90,11 @@ class StatusViewController: UIViewController {
 				
 			} else {
 				
-				self.nameGraph.text = StatusViewController.myMonster.nickname
-				self.speciesGraph.text = Monster.speciesList[StatusViewController.myMonster.speciesNum]  + (StatusViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
-				self.healthGraph.text = self.healthList[StatusViewController.myMonster.health]
-				self.emotionGraph.text = self.emotionList[StatusViewController.myMonster.emotion]
-				self.cleannessGraph.text = self.cleannessList[StatusViewController.myMonster.cleanness]
+				self.nameGraph.text = UIViewController.myMonster.nickname
+				self.speciesGraph.text = Monster.speciesList[UIViewController.myMonster.speciesNum]  + (UIViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
+				self.healthGraph.text = self.healthList[UIViewController.myMonster.health]
+				self.emotionGraph.text = self.emotionList[UIViewController.myMonster.emotion]
+				self.cleannessGraph.text = self.cleannessList[UIViewController.myMonster.cleanness]
 			}
 		}
 	}

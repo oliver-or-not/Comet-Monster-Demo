@@ -34,7 +34,7 @@ class CareMotionViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		loadData()
+//		loadData()
 		
 		monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][motionIndex]
 		
@@ -45,55 +45,55 @@ class CareMotionViewController: UIViewController {
 			toolImage1.image = UIViewController.toolArray[0]
 			toolImage2.image = UIViewController.toolArray[0]
 			
-			prevValue = CareMotionViewController.myMonster.health
+			prevValue = UIViewController.myMonster.health
 			changeGraph.text = healthList[prevValue]
 			
-			if CareMotionViewController.myMonster.addedHealth - CareMotionViewController.myMonster.subtractedHealth < -3 {
-				CareMotionViewController.myMonster.addedHealth = CareMotionViewController.myMonster.subtractedHealth - 3
+			if UIViewController.myMonster.addedHealth - UIViewController.myMonster.subtractedHealth < -3 {
+				UIViewController.myMonster.addedHealth = UIViewController.myMonster.subtractedHealth - 3
 			}
-			CareMotionViewController.myMonster.addedHealth += 2
-			if CareMotionViewController.myMonster.addedHealth - CareMotionViewController.myMonster.subtractedHealth > 2 {
-				CareMotionViewController.myMonster.addedHealth = CareMotionViewController.myMonster.subtractedHealth + 2
+			UIViewController.myMonster.addedHealth += 2
+			if UIViewController.myMonster.addedHealth - UIViewController.myMonster.subtractedHealth > 2 {
+				UIViewController.myMonster.addedHealth = UIViewController.myMonster.subtractedHealth + 2
 			}
 			saveData()
 			
-			nextValue = CareMotionViewController.myMonster.health
+			nextValue = UIViewController.myMonster.health
 			
 		} else if careChoice == "Play" {
 			toolImage1.image = UIViewController.toolArray[1]
 			toolImage2.image = UIViewController.toolArray[1]
 			
-			prevValue = CareMotionViewController.myMonster.emotion
+			prevValue = UIViewController.myMonster.emotion
 			changeGraph.text = emotionList[prevValue]
 			
-			if CareMotionViewController.myMonster.addedEmotion - CareMotionViewController.myMonster.subtractedEmotion < -3 {
-				CareMotionViewController.myMonster.addedEmotion = CareMotionViewController.myMonster.subtractedEmotion - 3
+			if UIViewController.myMonster.addedEmotion - UIViewController.myMonster.subtractedEmotion < -3 {
+				UIViewController.myMonster.addedEmotion = UIViewController.myMonster.subtractedEmotion - 3
 			}
-			CareMotionViewController.myMonster.addedEmotion += 2
-			if CareMotionViewController.myMonster.addedEmotion - CareMotionViewController.myMonster.subtractedEmotion > 2 {
-				CareMotionViewController.myMonster.addedEmotion = CareMotionViewController.myMonster.subtractedEmotion + 2
+			UIViewController.myMonster.addedEmotion += 2
+			if UIViewController.myMonster.addedEmotion - UIViewController.myMonster.subtractedEmotion > 2 {
+				UIViewController.myMonster.addedEmotion = UIViewController.myMonster.subtractedEmotion + 2
 			}
 			saveData()
 			
-			nextValue = CareMotionViewController.myMonster.emotion
+			nextValue = UIViewController.myMonster.emotion
 			
 		} else if careChoice == "Wash" {
 			toolImage1.image = UIViewController.toolArray[2]
 			toolImage2.image = UIViewController.toolArray[2]
 			
-			prevValue = CareMotionViewController.myMonster.cleanness
+			prevValue = UIViewController.myMonster.cleanness
 			changeGraph.text = cleannessList[prevValue]
 			
-			if CareMotionViewController.myMonster.addedCleanness - CareMotionViewController.myMonster.subtractedCleanness < -3 {
-				CareMotionViewController.myMonster.addedCleanness = CareMotionViewController.myMonster.subtractedCleanness - 3
+			if UIViewController.myMonster.addedCleanness - UIViewController.myMonster.subtractedCleanness < -3 {
+				UIViewController.myMonster.addedCleanness = UIViewController.myMonster.subtractedCleanness - 3
 			}
-			CareMotionViewController.myMonster.addedCleanness += 2
-			if CareMotionViewController.myMonster.addedCleanness - CareMotionViewController.myMonster.subtractedCleanness > 2 {
-				CareMotionViewController.myMonster.addedCleanness = CareMotionViewController.myMonster.subtractedCleanness + 2
+			UIViewController.myMonster.addedCleanness += 2
+			if UIViewController.myMonster.addedCleanness - UIViewController.myMonster.subtractedCleanness > 2 {
+				UIViewController.myMonster.addedCleanness = UIViewController.myMonster.subtractedCleanness + 2
 			}
 			saveData()
 			
-			nextValue = CareMotionViewController.myMonster.cleanness
+			nextValue = UIViewController.myMonster.cleanness
 		
 		} else {
 			dismiss(animated: true)
@@ -102,7 +102,7 @@ class CareMotionViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
-		loadData()
+//		loadData()
 		careMotionTimerFunc()
 		timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(careMotionTimerFunc), userInfo: nil, repeats: true)
 	}

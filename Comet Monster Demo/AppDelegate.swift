@@ -155,3 +155,8 @@ extension UIColor {
 			 )
 	 }
 }
+
+//MARK: - Hiding Home Indicator
+extension UIViewController {
+
+}

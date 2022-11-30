@@ -31,16 +31,16 @@ class NamingViewController: UIViewController {
 		self.navigationItem.hidesBackButton = true
 		doneButton.layer.cornerRadius = 5
 		
-		loadData()
+//		loadData()
 		
 		monsterImage.image = UIViewController.monsterImageArray[UIViewController.myMonster.speciesNum][motionIndex]
 		
-		speciesGraph.text = Monster.speciesList[StatusViewController.myMonster.speciesNum]  + (StatusViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
+		speciesGraph.text = Monster.speciesList[UIViewController.myMonster.speciesNum]  + (UIViewController.myMonster.sex == 1 ? " (♂︎)" : " (♀︎)")
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
-		loadData()
+//		loadData()
 		namingTimerFunc()
 		timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(namingTimerFunc), userInfo: nil, repeats: true)
 	}
@@ -83,7 +83,7 @@ class NamingViewController: UIViewController {
 				return
 			}
 			
-			NamingViewController.myMonster.nickname = safeText
+			UIViewController.myMonster.nickname = safeText
 			
 			saveData()
 		}

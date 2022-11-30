@@ -41,10 +41,10 @@ class EvolutionViewController: UIViewController {
 		okButton.setTitle("Start", for: .normal)
 		effectImage.alpha = 0.0
 		
-		loadData()
+//		loadData()
 		
-		prevSpeciesNum = EvolutionViewController.myMonster.speciesNum
-		nextSpeciesNum = Monster.evolutionSpeciesNum[EvolutionViewController.myMonster.speciesNum]
+		prevSpeciesNum = UIViewController.myMonster.speciesNum
+		nextSpeciesNum = Monster.evolutionSpeciesNum[UIViewController.myMonster.speciesNum]
 		
 		monsterImage.image = UIViewController.monsterImageArray[prevSpeciesNum][0]
 		
